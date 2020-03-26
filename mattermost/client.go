@@ -27,6 +27,8 @@ func GetBotUser(m model.Client4) *model.User {
 		os.Exit(1)
 	}
 
+	user.FirstName = "BOT"
+
 	return user
 }
 
@@ -42,11 +44,12 @@ func GetChannelMembers(m model.Client4, teamName string, channelName string, bot
 	"Your Wrists...Heres a video you can look at! https://www.youtube.com/watch?v=nWsoIgHzsEM",
     "Your Back...Heres a video you can look at! https://www.youtube.com/watch?v=wgPf9IJiW5s",
     "Your Neck...Heres a video you can look at! https://www.youtube.com/watch?v=2NOsE-VPpkE",
-    "Your Wrists again for good luck",
-	"Youre whole Body...Heres a video you can look at! https://www.youtube.com/watch?v=JJAHGpe0AVU")
+	"Your Wrists again for good luck",
+	"Your Legs...Heres a video you can look at! https://www.youtube.com/watch?v=UHHBE0caeMM"
+	"Your whole Body...Heres a video you can look at! https://www.youtube.com/watch?v=JJAHGpe0AVU")
 
-rand.Seed(time.Now().Unix())
-stretchmessage := fmt.Sprint("It's time to stretch..." , reasons[rand.Intn(len(reasons))])
+	rand.Seed(time.Now().Unix())
+	stretchmessage := fmt.Sprint("It's time to stretch..." , reasons[rand.Intn(len(reasons))])
 
 
 	channel, resp := m.GetChannelByName(channelName, team.Id, "")
