@@ -3,7 +3,6 @@ package mattermost
 import (
 	"fmt"
 	"os"
-	"time"
 	
 	"github.com/mattermost/mattermost-server/model"
 )
@@ -56,7 +55,7 @@ func GetChannelMembers(m model.Client4, teamName string, channelName string) *mo
 func StretchReminder(m model.Client4, channelMembers model.ChannelMembers, botUser *model.User) {
 
 	for _, p := range channelMembers {
-		uidList := []string{p.First.UserId, botUser.Id}
+		uidList := []string{p.UserId, botUser.Id}
 		channel, resp := m.CreateGroupChannel(uidList)
 
 		fmt.Printf("Channel: %v", channel)

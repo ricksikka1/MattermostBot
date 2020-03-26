@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"time"
 	"github.com/ricksikka1/MattermostBot/mattermost"
 )
 
