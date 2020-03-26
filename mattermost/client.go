@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 	
-	"github.com/mattermost/mattermost-server/tree/master/model"
+	"github.com/mattermost/mattermost-server/model"
 )
 
 type ClientV4 model.Client4
