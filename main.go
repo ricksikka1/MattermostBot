@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"time"
-	"https://github.com/ricksikka1/MattermostBot/mattermost"
+	"github.com/ricksikka1/MattermostBot/mattermost"
 )
 
 func main(){
