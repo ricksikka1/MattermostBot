@@ -21,5 +21,6 @@ func main(){
 
 	bot := mattermost.GetBotUser(*api)
 
+	mattermost.StretchReminder(*api, *members, bot)
 
 }
