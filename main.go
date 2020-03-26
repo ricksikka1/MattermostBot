@@ -2,6 +2,7 @@ package main
 
 import (
 	"os"
+	"fmt"
 	"github.com/ricksikka1/MattermostBot/mattermost"
 )
 
@@ -16,6 +17,8 @@ func main(){
 	api := mattermost.NewMatterMostClient(serverURL, botUserName, botPassword)
 
 	members := mattermost.GetChannelMembers(*api, teamName, channelName)
+	fmt.Printf("%+v\n", members)
+	fmt.Printf("There are %d members in channel %s for team %s\n", len(*members), channelName, teamName)
 
 	bot := mattermost.GetBotUser(*api)
 
