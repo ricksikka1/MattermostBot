@@ -15,16 +15,14 @@ func main(){
 	channelName := os.Getenv("STRETCHBOT_CHANNEL_NAME")
 
 	api := mattermost.NewMatterMostClient(serverURL, botUserName, botPassword)
-
-	members := mattermost.GetChannelMembers(*api, teamName, channelName)
-	fmt.Printf("There are %d members in channel %s for team %s\n", len(*members), channelName, teamName)
-	for _, p := range members {
-
-		fmt.Printf("The member is %s\n", p.Userid)
-	}
-
 	bot := mattermost.GetBotUser(*api)
 
-	mattermost.StretchReminder(*api, *members, bot)
+	members := mattermost.GetChannelMembers(*api, teamName, channelName, bot)
+	fmt.Printf("There are %d members in channel %s for team %s\n", len(*members), channelName, teamName)
+
+
+	
+
+	//mattermost.StretchReminder(*api, *members, bot, channelName)
 
 }
